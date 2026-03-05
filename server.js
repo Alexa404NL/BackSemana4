@@ -11,9 +11,10 @@ app.use(cors());
 app.use(express.json());
 // Rutas
 app.use("/api/countries", countryRoutes);
+app.use("/api/budget", budgetRoutes);
 // Ruta de inicio
 app.get("/", (req, res) => {
-	res.send("API de Países funcionando correctamente con PostgreSQL");
+	res.send("API funcionando correctamente con PostgreSQL");
 });
 // Iniciar servidor
 app.listen(PORT, () => {

@@ -23,5 +23,6 @@ async function testConnect(){
     }
 }
 
+
+module.exports =pool; 
 testConnect();
-module.exports =pool;
