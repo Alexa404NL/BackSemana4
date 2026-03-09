@@ -28,7 +28,7 @@ exports.createBudget = async (req, res) => {
 	const { name } = req.body;
 	// Validación básica
 	if (!name) {
-		return res.status(400).json({ error: "El nombre del país es obligatorio" });
+		return res.status(400).json({ error: "El nombre es obligatorio" });
 	}
 	try {
 		const result = await pool.query(
@@ -57,7 +57,7 @@ exports.updateBudget = async (req, res) => {
 			[Id],
 		);
 		if (checkResult.rows.length === 0) {
-			return res.status(404).json({ error: "País no encontrado" });
+			return res.status(404).json({ error: "Presupuesto no encontrado" });
 		}
 		// Actualizar el país
 		const updateResult = await pool.query(
